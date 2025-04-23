@@ -2,7 +2,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>uk.co.odinconsultants</groupId>
+    <groupId>uk.co.odinconsultants.microservices</groupId>
     <artifactId>MicroservicesPlayground</artifactId>
     <version>0.1</version>
     <name>${project.artifactId}</name>
@@ -23,6 +23,11 @@
             <name>Phillip Henry</name>
         </developer>
     </developers>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>rest_service</module>
+    </modules>
 
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
@@ -109,20 +114,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <compilerArgs>
-                        <arg>--add-exports java.base/sun.nio.ch=ALL-UNNAMED</arg>
-                        <arg>--add-exports=java.base/sun.net.util=ALL-UNNAMED</arg>
-                        <arg>--add-exports=java.management/sun.management=ALL-UNNAMED</arg>
-                        <arg>--add-exports=java.rmi/sun.rmi.registry=ALL-UNNAMED</arg>
-                        <arg>--add-exports=java.security.jgss/sun.security.krb5=ALL-UNNAMED</arg>
-                        <arg>--add-modules=jdk.incubator.vector</arg>
-                        <arg>--add-opens=java.base/java.nio=ALL-UNNAMED</arg>
-                        <arg>--enable-preview</arg>
-                    </compilerArgs>
-                </configuration>
             </plugin>
         </plugins>
     </build>
