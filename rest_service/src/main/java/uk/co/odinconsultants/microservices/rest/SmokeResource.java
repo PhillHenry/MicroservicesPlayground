@@ -6,9 +6,12 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("/hello")
 public class SmokeResource {
+
+    static final String SMOKE_TEST_MESSAGE = "Hello from Quarkus REST";
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello from Quarkus REST";
+        return SMOKE_TEST_MESSAGE;
     }
 }
