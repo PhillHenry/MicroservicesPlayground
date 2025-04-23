@@ -4,7 +4,9 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/hello")
+import static uk.co.odinconsultants.microservices.rest.WebConstants.SMOKE_ENDPOINT;
+
+@Path(SMOKE_ENDPOINT)
 public class SmokeResource {
 
     static final String SMOKE_TEST_MESSAGE = "Hello from Quarkus REST";
